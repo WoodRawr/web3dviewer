@@ -21,6 +21,13 @@ class ModelViewer extends React.Component {
     renderer.setSize( window.innerWidth, window.innerHeight );
     //Don't append the 3D renderer to the document itself
     //document.body.appendChild( renderer.domElement );
+
+    const controls = new OrbitControls( camera, renderer.domElement );
+
+    //controls.update() must be called after any manual changes to the camera's transform
+    camera.position.set( 0, 20, 100 );
+    controls.update();
+
     this.mount.appendChild( renderer.domElement );
     var geometry = new THREE.BoxGeometry( 1, 1, 1 );
     var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
