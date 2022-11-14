@@ -35,6 +35,14 @@ class ModelViewer extends React.Component {
     controls.update();
 
     /*
+    API Fetching Experiment
+    */
+    const apiUrl = 'https://api.github.com/users/hacktivist123/repos';
+    fetch(apiUrl)
+      .then((response) => response.json())
+      //.then((data) => console.log('This is your data', data));  //Outputting data, uncomment this to see example data from GitHub
+
+    /*
     Scene setup
     */
     //TODO: Check why appendChild is needed here
@@ -56,6 +64,11 @@ class ModelViewer extends React.Component {
     render() {
       return (<div ref={ref => (this.mount = ref)} /> );
     }
+
+    reset3DView() {
+      console.log('Resetting 3D view');
+    }
+
   }
 
   export default ModelViewer;
