@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+/*
+React imports
+*/
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+
+/*
+Component imports
+*/
 import ModelViewer from './ModelViewer';
 
 function App() {
-
-  const reset3DView = () => {
-    console.log("Resetting 3D View in App");
-  };
-
   return (
     <div className="App">
-        <button onclick={reset3DView} className="Reset-button">
-          Reset 3D View
-        </button>
-        <ModelViewer id="KitchenModel"/>
+      <ModelViewer/>
     </div>
   );
 }
-
-
 
 export default App;
