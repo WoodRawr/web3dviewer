@@ -26,7 +26,8 @@ class ModelViewer extends React.Component {
     Orbital Controls instantiation
     */
     const controls = new OrbitControls( camera, renderer.domElement );
-    controls.enableDamping = true;
+    controls.enableDamping = true; //Camera rotation interpolation
+    controls.maxDistance = 3; //Maximum camera dolly distance
 
     //controls.update() must be called after any manual changes to the camera's transform
     camera.position.set( 0, 0, 10);
@@ -41,7 +42,7 @@ class ModelViewer extends React.Component {
     var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
     var cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
-    camera.position.z = 3;  //camera distance from the object
+    camera.position.z = 3;  //default camera distance from the object
     var animate = function () {
       requestAnimationFrame( animate );
       controls.update();
