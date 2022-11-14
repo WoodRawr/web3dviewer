@@ -5,9 +5,10 @@ import ModelViewer from './ModelViewer';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+        <button onclick="reset3DView()" className="Reset-button">
+          Reset 3D View
+        </button>
         <ModelViewer/>
-      </header>
     </div>
   );
 }

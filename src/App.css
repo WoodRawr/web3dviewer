@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.Reset-button{
+  position: absolute;
+}

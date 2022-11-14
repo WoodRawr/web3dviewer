@@ -31,6 +31,7 @@ class ModelViewer extends React.Component {
 
     //controls.update() must be called after any manual changes to the camera's transform
     camera.position.set( 0, 0, 10);
+    controls.saveState();
     controls.update();
 
     /*
@@ -53,7 +54,7 @@ class ModelViewer extends React.Component {
   }
 
     render() {
-      return <div ref={ref => (this.mount = ref)} />;
+      return (<div ref={ref => (this.mount = ref)} /> );
     }
   }
 
