@@ -26,6 +26,7 @@ class ModelViewer extends React.Component {
     Orbital Controls instantiation
     */
     const controls = new OrbitControls( camera, renderer.domElement );
+    controls.enableDamping = true;
 
     //controls.update() must be called after any manual changes to the camera's transform
     camera.position.set( 0, 0, 10);
@@ -43,6 +44,7 @@ class ModelViewer extends React.Component {
     camera.position.z = 3;  //camera distance from the object
     var animate = function () {
       requestAnimationFrame( animate );
+      controls.update();
       //cube.rotation.y += 0.01;
       renderer.render( scene, camera );
     };
