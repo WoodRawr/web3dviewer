@@ -36,7 +36,7 @@ class ModelViewer extends React.Component {
     camera.position.z = 5;
     var animate = function () {
       requestAnimationFrame( animate );
-      cube.rotation.y += 0.01;
+      //cube.rotation.y += 0.01;
       renderer.render( scene, camera );
     };
     animate();
