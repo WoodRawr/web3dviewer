@@ -23,7 +23,7 @@ class ModelViewer extends React.Component {
     renderer.setSize( window.innerWidth, window.innerHeight );
 
     /*
-    Orbital COntrols instantiation
+    Orbital Controls instantiation
     */
     const controls = new OrbitControls( camera, renderer.domElement );
 
