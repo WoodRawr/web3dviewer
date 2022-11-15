@@ -11,6 +11,11 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+/*
+RoomPlan JSON Import
+*/
+import ExampleRoomData from './resource/example.json'
+
 class ModelViewer extends React.Component {
 
   componentDidMount() {
