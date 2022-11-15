@@ -53,12 +53,16 @@ class ModelViewer extends React.Component {
     var cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
     camera.position.z = 3;  //default camera distance from the object
+
+    
+
     var animate = function () {
       requestAnimationFrame(animate);
       controls.update();
       //cube.rotation.y += 0.01;
       renderer.render(scene, camera);
     };
+
     animate();
   }
 
