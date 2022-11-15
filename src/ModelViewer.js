@@ -28,7 +28,7 @@ class ModelViewer extends React.Component {
     */
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true; //Camera rotation interpolation
-    controls.maxDistance = 3; //Maximum camera dolly distance
+    controls.maxDistance = 7; //Maximum camera dolly distance
 
     //controls.update() must be called after any manual changes to the camera's transform
     camera.position.set(0, 0, 10);
@@ -48,14 +48,29 @@ class ModelViewer extends React.Component {
     */
     //TODO: Check why appendChild is needed here
     this.mount.appendChild(renderer.domElement);
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
+    var geometry = new THREE.BoxGeometry(0.38590455055236816, 2.689960241317749, 0);
     var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     var cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
     camera.position.z = 3;  //default camera distance from the object
 
-    
+    /*
+    Custom Transformation Experiment
+    */
+    const m = new THREE.Matrix4();
 
+    m.set(  -0.97375565767288208, 0,  0.22759565711021423, 0,
+      0, 1.0000001192092896, 0, 0,
+      -0.22759565711021423,  0,  -0.97375565767288208, 0,
+      0.16735656559467316, 0.1113053634762764, 1.4850519895553589, 1 );
+    
+   cube.applyMatrix4(m);
+   cube.matrixAutoUpdate = false;
+
+
+   /*
+    animate
+   */
     var animate = function () {
       requestAnimationFrame(animate);
       controls.update();
