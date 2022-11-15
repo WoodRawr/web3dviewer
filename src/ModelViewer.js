@@ -73,6 +73,15 @@ class ModelViewer extends React.Component {
    cube.matrixAutoUpdate = false;
 
 
+    /*
+      JSON Experiment
+    */
+    var data = require('./resource/example.json');
+    console.log(data);
+
+    
+
+
    /*
     animate
    */
