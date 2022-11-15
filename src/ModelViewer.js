@@ -91,11 +91,13 @@ class ModelViewer extends React.Component {
     var openings = data.openings
     var objects = data.objects
 
+    /*
     console.log(windows);
     console.log(doors);
     console.log(walls);
     console.log(openings);
     console.log(objects);
+    */
 
     /*
     const light = new THREE.PointLight( 0xff0000, 100, 500 );
@@ -106,10 +108,9 @@ class ModelViewer extends React.Component {
     /*
     wall creation; extension of JSON Experiment
     */
-    for (var i = 0; i < objects.length; i++)
+    for (var i = 0; i < walls.length; i++)
     {
-      var obj = objects[i];
-      console.log(`Name: ${obj.identifier}`);
+      var obj = walls[i];
 
       const m = new THREE.Matrix4();
 
@@ -117,18 +118,28 @@ class ModelViewer extends React.Component {
         obj.transform[4],  obj.transform[5],  obj.transform[6],  obj.transform[7],
         obj.transform[8],   obj.transform[9],   obj.transform[10],  obj.transform[11],
         obj.transform[12],  obj.transform[13],  obj.transform[14],  obj.transform[15] );
+        
+        m.set( obj.transform[15],  obj.transform[14],   obj.transform[13],  obj.transform[12],
+          obj.transform[11],  obj.transform[10],  obj.transform[9],  obj.transform[8],
+          obj.transform[7],   obj.transform[6],   obj.transform[5],  obj.transform[4],
+          obj.transform[3],  obj.transform[2],  obj.transform[1],  obj.transform[0] );
 
-        var translation = new THREE.Vector3();
+      var translation = new THREE.Vector3();
       var rotation = new THREE.Quaternion();
       var scale = new THREE.Vector3();
 
       m.decompose(translation, rotation, scale);
 
+      console.log(translation);
+      console.log(rotation);
+      console.log(scale);
+
       const material = new THREE.MeshBasicMaterial({color: 0x00FF00});
       var geometry = new THREE.BoxGeometry(obj.dimensions[0], obj.dimensions[1], obj.dimensions[2]);
       //var geometry = new THREE.BoxGeometry(1, 1, 1);
 
-      geometry.applyQuaternion(rotation);
+      //geometry.applyQuaternion(rotation);
+      //geometry.translate(translation.x,translation.y,translation.z);
       
       //geometry.applyMatrix4(m);
       //var vec = new THREE.Vector3();
@@ -145,7 +156,7 @@ class ModelViewer extends React.Component {
       //cube.matrixAutoUpdate = false;
       //cube.matrix.set(m);
       //cube.matrixAutoUpdate = false;
-      
+      cube.position.set(translation.x,translation.z,translation.y);
       
       //cube.position.set(vec);
       //cube.matrixAutoUpdate = false;
