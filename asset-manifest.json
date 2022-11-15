@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/web3dviewer/static/css/main.f0d3143a.css",
-    "main.js": "/web3dviewer/static/js/main.dec0eb8d.js",
+    "main.css": "/web3dviewer/static/css/main.e6c13ad2.css",
+    "main.js": "/web3dviewer/static/js/main.58e1ab78.js",
     "static/js/787.76d81813.chunk.js": "/web3dviewer/static/js/787.76d81813.chunk.js",
-    "static/media/logo.svg": "/web3dviewer/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/web3dviewer/index.html",
-    "main.f0d3143a.css.map": "/web3dviewer/static/css/main.f0d3143a.css.map",
-    "main.dec0eb8d.js.map": "/web3dviewer/static/js/main.dec0eb8d.js.map",
+    "main.e6c13ad2.css.map": "/web3dviewer/static/css/main.e6c13ad2.css.map",
+    "main.58e1ab78.js.map": "/web3dviewer/static/js/main.58e1ab78.js.map",
     "787.76d81813.chunk.js.map": "/web3dviewer/static/js/787.76d81813.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0d3143a.css",
-    "static/js/main.dec0eb8d.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.58e1ab78.js"
   ]
 }
